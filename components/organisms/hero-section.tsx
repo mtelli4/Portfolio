@@ -69,14 +69,15 @@ export default function HeroSection() {
       <div className="hero-content relative z-10 container mx-auto px-4 transition-transform duration-[0.5s] ease-out">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in">
-            <span className="text-gradient">Développeur Créatif</span>
+            <span className="text-gradient">Mohamed Telli</span>
           </h1>
 
           <p
             className="text-xl md:text-2xl text-foreground/80 mb-8 animate-fade-in"
             style={{ animationDelay: "0.2s" }}
           >
-            Je conçois et développe des expériences web modernes et immersives
+            Étudiant en cycle ingénieur à l&apos;EPITA, spécialisé en
+            développement d&apos;applications
           </p>
 
           <div
@@ -99,17 +100,17 @@ export default function HeroSection() {
             style={{ animationDelay: "0.6s" }}
           >
             <SocialIcon
-              href="https://github.com"
+              href="https://github.com/mtelli4"
               icon={Github}
               label="GitHub"
             />
             <SocialIcon
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/mohamed-telli"
               icon={Linkedin}
               label="LinkedIn"
             />
             <SocialIcon
-              href="mailto:contact@example.com"
+              href="mailto:tellimohamed91@gmail.com"
               icon={Mail}
               label="Email"
             />

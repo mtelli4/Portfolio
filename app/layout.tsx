@@ -10,8 +10,9 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata = {
-  title: "Portfolio | Creative Developer",
-  description: "Portfolio moderne avec effets parallax",
+  title: "Portfolio | Mohamed Telli",
+  description:
+    "Bienvenue sur mon portfolio ! Découvrez mes projets et mon parcours de développeur.",
 };
 
 export default function RootLayout({
