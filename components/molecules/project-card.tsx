@@ -1,5 +1,5 @@
 import Button from "@/components/atoms/button";
-import { ExternalLink, GithubIcon } from "lucide-react";
+import { ExternalLink, GithubIcon, Info } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -8,6 +8,7 @@ interface ProjectCardProps {
   description: string;
   image: string;
   tags: string[];
+  detailsUrl?: string;
   demoUrl?: string;
   githubUrl?: string;
 }
@@ -17,6 +18,7 @@ export default function ProjectCard({
   description,
   image,
   tags,
+  detailsUrl,
   demoUrl,
   githubUrl,
 }: ProjectCardProps) {
@@ -50,9 +52,18 @@ export default function ProjectCard({
         <div className="flex gap-3">
           {demoUrl && (
             <Link href={demoUrl} target="_blank" rel="noopener noreferrer">
-              <Button variant="outline" size="sm" className="gap-1.5">
+              <Button variant="default" size="sm" className="gap-1.5">
                 <ExternalLink className="w-4 h-4" />
                 Demo
+              </Button>
+            </Link>
+          )}
+
+          {detailsUrl && (
+            <Link href={detailsUrl} target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="sm" className="gap-1.5">
+                <Info className="w-4 h-4" />
+                Détails
               </Button>
             </Link>
           )}
