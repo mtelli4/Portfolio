@@ -1,5 +1,5 @@
 import SocialIcon from "@/components/atoms/social-icon";
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 
 export default function Footer() {
@@ -10,8 +10,8 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4 text-gradient">Portfolio</h3>
             <p className="text-muted-foreground text-sm">
-              Un développeur passionné par la création d&apos;expériences web
-              modernes et immersives.
+              Un développeur passionné par le développement d&apos;applications
+              modernes.
             </p>
           </div>
 
@@ -96,6 +96,22 @@ export default function Footer() {
                   Consulting
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Développement logiciel
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Développement d&apos;applications
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -103,22 +119,17 @@ export default function Footer() {
             <h3 className="font-bold mb-4">Réseaux sociaux</h3>
             <div className="flex gap-3">
               <SocialIcon
-                href="https://github.com"
+                href="https://github.com/mtelli4"
                 icon={Github}
                 label="GitHub"
               />
               <SocialIcon
-                href="https://linkedin.com"
+                href="https://linkedin.com/in/mohamed-telli"
                 icon={Linkedin}
                 label="LinkedIn"
               />
               <SocialIcon
-                href="https://twitter.com"
-                icon={Twitter}
-                label="Twitter"
-              />
-              <SocialIcon
-                href="mailto:contact@example.com"
+                href="mailto:tellimohamed91@gmail.com"
                 icon={Mail}
                 label="Email"
               />
@@ -130,21 +141,6 @@ export default function Footer() {
           <p className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} Portfolio. Tous droits réservés.
           </p>
-
-          <div className="flex gap-4">
-            <Link
-              href="#"
-              className="text-xs text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Politique de confidentialité
-            </Link>
-            <Link
-              href="#"
-              className="text-xs text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Mentions légales
-            </Link>
-          </div>
         </div>
       </div>
     </footer>

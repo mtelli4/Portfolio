@@ -8,7 +8,7 @@ export default function ContactSection() {
       <div className="container px-4 md:px-6">
         <SectionHeading
           title="Me contacter"
-          subtitle="Vous avez un projet en tête ? N'hésitez pas à me contacter"
+          subtitle="Vous avez un projet en tête ou des besoins au sein de votre entreprrise ? N'hésitez pas à me contacter"
           align="center"
         />
 
@@ -31,7 +31,9 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-medium">Email</h4>
-                    <p className="text-muted-foreground">contact@example.com</p>
+                    <p className="text-muted-foreground">
+                      tellimohamed91@gmail.com
+                    </p>
                   </div>
                 </div>
 
@@ -41,7 +43,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-medium">Téléphone</h4>
-                    <p className="text-muted-foreground">+33 6 12 34 56 78</p>
+                    <p className="text-muted-foreground">+33 7 67 63 63 58</p>
                   </div>
                 </div>
 
@@ -60,8 +62,8 @@ export default function ContactSection() {
             <div className="glass rounded-2xl p-8">
               <h3 className="text-xl font-bold mb-6">Disponibilité</h3>
               <p className="text-muted-foreground mb-4">
-                Je suis actuellement disponible pour des missions freelance ou
-                des opportunités d&apos;emploi à temps plein.
+                Je suis actuellement disponible pour une alternance, dans le
+                cadre de mes études en cycle ingénieur au sein de l&apos;EPITA.
               </p>
               <div className="bg-secondary/50 rounded-lg p-4">
                 <p className="text-sm font-medium">Statut actuel:</p>
