@@ -446,7 +446,7 @@ export default function SkillsSection() {
                       <div className="w-full bg-muted rounded-full h-3 overflow-hidden">
                         <div
                           className="h-full bg-gradient-to-r from-primary to-primary-light rounded-full flex items-center justify-end"
-                          style={{ width: `${(skill.level / 3) * 100}%` }}
+                          style={{ width: `100%` }}
                         >
                           <span className="text-xs text-white mr-2">
                             Niveau {skill.level}
