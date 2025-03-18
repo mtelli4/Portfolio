@@ -1,16 +1,22 @@
 "use client";
 
 import Button from "@/components/atoms/button";
+import { Loader2 } from "lucide-react";
 import { useState } from "react";
 import { z } from "zod";
-import { Loader2 } from "lucide-react";
 
 // Schéma de validation avec Zod
 const contactFormSchema = z.object({
-  name: z.string().min(2, { message: "Le nom doit contenir au moins 2 caractères" }),
+  name: z
+    .string()
+    .min(2, { message: "Le nom doit contenir au moins 2 caractères" }),
   email: z.string().email({ message: "Adresse email invalide" }),
-  subject: z.string().min(2, { message: "Le sujet doit contenir au moins 2 caractères" }),
-  message: z.string().min(10, { message: "Le message doit contenir au moins 10 caractères" }),
+  subject: z
+    .string()
+    .min(2, { message: "Le sujet doit contenir au moins 2 caractères" }),
+  message: z
+    .string()
+    .min(10, { message: "Le message doit contenir au moins 10 caractères" }),
 });
 
 export default function ContactForm() {
@@ -34,7 +40,7 @@ export default function ContactForm() {
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    
+
     // Effacer l'erreur du champ modifié
     if (errors[name]) {
       setErrors((prev) => {
@@ -54,7 +60,7 @@ export default function ContactForm() {
     try {
       // Valider les données du formulaire
       const validatedData = contactFormSchema.parse(formData);
-      
+
       // Envoyer les données à notre API
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -63,9 +69,11 @@ export default function ContactForm() {
       });
 
       const data = await response.json();
-      
+
       if (!response.ok) {
-        throw new Error(data.error || "Une erreur est survenue lors de l'envoi du message");
+        throw new Error(
+          data.error || "Une erreur est survenue lors de l'envoi du message"
+        );
       }
 
       // Réinitialiser le formulaire en cas de succès
@@ -93,7 +101,8 @@ export default function ContactForm() {
         // Gérer les autres erreurs
         setSubmitStatus({
           type: "error",
-          message: error instanceof Error ? error.message : "Une erreur est survenue",
+          message:
+            error instanceof Error ? error.message : "Une erreur est survenue",
         });
       }
     } finally {
@@ -174,7 +183,7 @@ export default function ContactForm() {
       {submitStatus.type && (
         <div
           className={`p-3 rounded-lg ${
-            submitStatus.type === "success" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
+            submitStatus.type === "success" ? "text-green-500" : "text-red-500"
           }`}
         >
           {submitStatus.message}
