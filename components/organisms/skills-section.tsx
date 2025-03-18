@@ -410,10 +410,10 @@ export default function SkillsSection() {
           defaultValue="frontend"
           className="w-full max-w-6xl mx-auto mt-12"
         >
-          <TabsList className="grid w-full grid-cols-5 mb-8 bg-background/50 border border-border">
+          <TabsList className="grid w-full truncate grid-cols-5 mb-8 bg-background/50 border border-border">
             <TabsTrigger
               value="frontend"
-              className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+              className="data-[state=active]:bg-primary truncate data-[state=active]:text-primary-foreground"
             >
               Technologies
             </TabsTrigger>
@@ -425,25 +425,25 @@ export default function SkillsSection() {
             </TabsTrigger> */}
             <TabsTrigger
               value="db"
-              className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+              className="data-[state=active]:bg-primary truncate data-[state=active]:text-primary-foreground"
             >
               Bases de données
             </TabsTrigger>
             <TabsTrigger
               value="devops"
-              className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+              className="data-[state=active]:bg-primary truncate data-[state=active]:text-primary-foreground"
             >
               DevOps
             </TabsTrigger>
             <TabsTrigger
               value="tools"
-              className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+              className="data-[state=active]:bg-primary truncate data-[state=active]:text-primary-foreground"
             >
               Outils et gestion de projet
             </TabsTrigger>
             <TabsTrigger
               value="soft-skills"
-              className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+              className="data-[state=active]:bg-primary truncate data-[state=active]:text-primary-foreground"
             >
               Transverse
             </TabsTrigger>
