@@ -4,20 +4,47 @@ import SkillCard from "@/components/molecules/skill-card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion } from "framer-motion";
 import {
+  Braces,
   Brain,
-  Briefcase,
+  Cable,
   ChevronDown,
+  Circle,
+  CircleUserRound,
   ClipboardList,
   Code,
+  Coffee,
+  Columns,
+  Component,
+  Container,
+  CornerRightUp,
+  Cpu,
   Database,
-  Globe,
-  Layout,
+  FileCode,
+  FileJson,
+  FileText,
+  GitBranch,
+  GithubIcon,
+  Hash,
+  Hexagon,
+  Layers,
+  LayoutGrid,
+  ListTodo,
   LucideIcon,
+  Network,
+  Package,
   Palette,
+  PlusSquare,
+  Repeat,
+  Rocket,
   Server,
-  Settings,
   Smartphone,
+  Sparkles,
+  TerminalSquare,
   Users,
+  UserSquare2,
+  Wind,
+  Workflow,
+  Zap,
 } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
@@ -55,35 +82,36 @@ export default function SkillsSection() {
   });
 
   const technologiesSkills: Skill[] = [
-    { name: "HTML/CSS", icon: Layout },
-    { name: "JavaScript/TypeScript", icon: Code },
-    { name: "React/Next.js", icon: Globe },
-    { name: "Java", icon: Code },
-    { name: "Python", icon: Code },
-    { name: "C", icon: Code },
-    { name: "C++", icon: Code },
-    { name: "C#", icon: Code },
-    { name: "PHP", icon: Code },
-    { name: "ASM", icon: Code },
-    { name: "Kotlin", icon: Code },
-    { name: "XML", icon: Code },
-    { name: ".NET", icon: Code },
-    { name: "Jetpack Compose", icon: Palette },
-    { name: "Astro", icon: Globe },
-    { name: "React Native", icon: Smartphone },
-    { name: "Vite.js", icon: Globe },
-    { name: "Node", icon: Server },
-    { name: "Bootstrap", icon: Layout },
-    { name: "Tailwind CSS", icon: Palette },
+    { name: "HTML/CSS", icon: FileText }, // Au lieu de Layout
+    { name: "JavaScript/TypeScript", icon: FileCode }, // Au lieu de Code
+    { name: "React", icon: Component }, // Au lieu de Globe
+    { name: "Next.js", icon: CornerRightUp }, // Au lieu de Globe
+    { name: "Java", icon: Coffee }, // Au lieu de Code (coffee = tasse de café, clin d'œil à Java)
+    { name: "Python", icon: TerminalSquare }, // Au lieu de Code
+    { name: "C", icon: Circle }, // Icône circulaire avec C
+    { name: "C++", icon: PlusSquare }, // Représente le "++" de C++
+    { name: "C#", icon: Hash }, // Représente le "#" de C#
+    { name: "PHP", icon: FileJson }, // Au lieu de Code
+    { name: "ASM", icon: Cpu }, // Au lieu de Code (représente le bas niveau)
+    { name: "Kotlin", icon: Hexagon }, // Au lieu de Code (ressemble au logo K de Kotlin)
+    { name: "XML", icon: Braces }, // Au lieu de Code (évoque les balises)
+    { name: ".NET", icon: Network }, // Au lieu de Code
+    { name: "Jetpack Compose", icon: Sparkles }, // Au lieu de Palette (évoque l'UI dynamique)
+    { name: "Astro", icon: Rocket }, // Au lieu de Globe (évoque le logo d'Astro)
+    { name: "React Native", icon: Smartphone }, // Bien adapté, peut être conservé
+    { name: "Vite.js", icon: Zap }, // Au lieu de Globe (évoque la vitesse de Vite)
+    { name: "Node", icon: Server }, // Au lieu de Server (plus spécifique)
+    { name: "Bootstrap", icon: LayoutGrid }, // Au lieu de Layout (représente la grille)
+    { name: "Tailwind CSS", icon: Wind }, // Au lieu de Palette (évoque le nom "Tailwind")
   ];
 
   const dbSkills = [
-    { name: "SQL", icon: Server },
-    { name: "MySQL", icon: Server },
-    { name: "MongoDB", icon: Server },
-    { name: "PostgreSQL", icon: Server },
-    { name: "PL/SQL", icon: Server },
-    { name: "JDBC", icon: Server },
+    { name: "SQL", icon: Database }, // Représente bien une base de données relationnelle
+    { name: "MySQL", icon: Database }, // Base de données relationnelle standard
+    { name: "MongoDB", icon: Layers }, // Représente le stockage de documents JSON empilés
+    { name: "PostgreSQL", icon: Database }, // Base de données relationnelle avancée
+    { name: "PL/SQL", icon: FileCode }, // Langage de programmation SQL avec du code
+    { name: "JDBC", icon: Cable }, // Représente la connectivité/interface
   ];
   // const backendSkills: Skill[] = [
   //   { name: "Node.js", icon: Server, level: 80 },
@@ -97,23 +125,23 @@ export default function SkillsSection() {
   // ];
 
   const devopsSkills: Skill[] = [
-    { name: "Github", icon: Code },
-    { name: "Gitlab", icon: Code },
-    { name: "Docker", icon: Settings },
-    { name: "Jenkins (Pipeline CI/CD)", icon: Settings },
-    { name: "Maven", icon: Settings },
-    { name: "Gradle", icon: Settings },
+    { name: "Github", icon: GithubIcon }, // Au lieu de Code
+    { name: "Gitlab", icon: GitBranch }, // Au lieu de Code
+    { name: "Docker", icon: Container }, // Au lieu de Settings
+    { name: "Jenkins (Pipeline CI/CD)", icon: Workflow }, // Au lieu de Settings
+    { name: "Maven", icon: Package }, // Au lieu de Settings
+    { name: "Gradle", icon: Layers }, // Au lieu de Settings
   ];
 
   const projectSkills: Skill[] = [
-    { name: "Figma", icon: Palette },
-    { name: "Jira", icon: Briefcase },
-    { name: "Notion", icon: Layout },
-    { name: "Trello", icon: Layout },
-    { name: "Agile", icon: Users },
-    { name: "Scrum", icon: Users },
-    { name: "Kanban", icon: Layout },
-    { name: "RACI", icon: Briefcase },
+    { name: "Figma", icon: Palette }, // Bien adapté, peut être conservé
+    { name: "Jira", icon: LayoutGrid }, // Au lieu de Briefcase
+    { name: "Notion", icon: FileText }, // Au lieu de Layout
+    { name: "Trello", icon: ListTodo }, // Au lieu de Layout
+    { name: "Agile", icon: Repeat }, // Au lieu de Users (évoque les cycles itératifs)
+    { name: "Scrum", icon: CircleUserRound }, // Au lieu de Users (évoque les daily scrums)
+    { name: "Kanban", icon: Columns }, // Au lieu de Layout (représente les colonnes Kanban)
+    { name: "RACI", icon: UserSquare2 }, // Au lieu de Briefcase (évoque la matrice de responsabilités)
   ];
 
   const softSkills: SoftSkill[] = [

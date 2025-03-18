@@ -36,7 +36,6 @@ export default function ProjectsSection() {
       image: "/Portfolio2/home.png",
       tags: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Framer Motion"],
       detailsUrl: "/Portfolio2",
-      demoUrl: "#",
       githubUrl: "https://github.com/mtelli4/Portfolio.git",
     },
     {
@@ -65,7 +64,7 @@ export default function ProjectsSection() {
       image: "/Portfolio1/home.jpg",
       tags: ["Astro", "TypeScript", "CSS"],
       detailsUrl: "/Portfolio1",
-      demoUrl: "https://telli-mohamed.me",
+      demoUrl: "https://oldportfolio-pied.vercel.app",
       githubUrl: "https://github.com/mtelli4/telli-mohamed.me.git",
     },
     {
