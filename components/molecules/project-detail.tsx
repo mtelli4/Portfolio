@@ -153,7 +153,7 @@ export default function ProjectDetailsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background py-12 px-4 md:px-6">
+    <div className="min-h-screen bg-background py-12 px-4 md:px-6 pt-24">
       <div className="container mx-auto max-w-5xl">
         {/* En-tête et navigation */}
         <div className="mb-8">
