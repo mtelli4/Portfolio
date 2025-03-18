@@ -55,7 +55,7 @@ export default function ProjectDetailsPage() {
         // Exemple de données pour le projet EiffelTime
         if (params.projectId === "EiffelTime") {
           setProject({
-            title: "Eiffel Time",
+            title: "Eiffel Time (page en cours de développement)",
             description:
               "Une application de gestion universitaire multiplateforme, permettant de centraliser et faciliter l'accès à l'emploi du temps, la gestion des notes, les moyennes, la gestion des absences, le suivi des présences et la messagerie pour l'Université Gustave Eiffel.",
             image: "/EiffelTime/home.png",
