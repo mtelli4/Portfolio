@@ -134,7 +134,7 @@ export default function SkillsSection() {
                 Au début de la phase de développement, j'ai mis en place la configuration de la structure du projet et de ses dépendances, pour assurer son bon fonctionnement sur web, iOS et Android, à travers des composants partagés entre chaque plateforme.\n\n
                 J'ai ensuite développé la majorité de l'UI de cette application, notamment l'emploi du temps, les notes, les moyennes, les absences et retards, la messagerie, le centre de notification, la partie administration et la barre de navigation latérale sur web, mais aussi celle sur mobile`,
 
-          img: "/EiffelTime/Login_screen.png",
+          img: "/EiffelTime/home.png",
           path: "nested/eiffeltime",
         },
         {
@@ -145,7 +145,7 @@ export default function SkillsSection() {
                 J'ai également utilisé le format Markdown pour le contenu des fichiers Astro, pour faciliter la rédaction et la mise en forme des textes.\n\n
                 Dans ce projet, j'ai aussi pu utilisé la bibliothèque Astro pour la gestion des routes et des composants, pour faciliter la navigation et la réutilisation des composants.\n\n
                 Enfin, j'assure l'intégration et le déploiement continu de ce site web avec GitHub Actions pour garantir sa disponibilité et sa mise à jour régulière.`,
-          img: "/stock-1.jpg",
+          img: "/Portfolio1/home.jpg",
           path: "site-portfolio",
         },
         {
@@ -155,7 +155,7 @@ export default function SkillsSection() {
           J'ai développé ce jeu en C# avec Unity, pour permettre une expérience de jeu fluide et agréable.\n\n
           J'ai conçu les différents niveaux de ce jeu, pour permettre une progression adaptée au niveau de l'utilisateur, mais aussi pour permettre une expérience de jeu variée et intéressante.\n\n
           J'ai également développé les différents mécanismes de jeu, pour permettre une expérience de jeu interactive et stimulante, mais aussi pour permettre une expérience de jeu éducative et pédagogique.\n\n`,
-          img: "/ArithmeticArena/stock-2.jpg",
+          img: "/ArithmeticArena/home.jpg",
           path: "arithmeticarena",
         },
         {
@@ -167,7 +167,7 @@ export default function SkillsSection() {
           J'ai conçu les différentes interfaces de cette application, pour permettre une navigation fluide et une expérience utilisateur agréable.\n\n
           Ce projet a été l'occasion pour moi de mettre en pratique mes compétences en JDBC (Java Database Connectivity) pour la gestion des données, mais aussi pour la gestion des commandes et des clients.\n\n
           J'ai également utilisé JavaFX pour le développement de l'interface graphique de cette application, pour permettre une expérience utilisateur moderne et intuitive.\n\n`,
-          img: "/BellaCrosta/ConnexionPizzaiolo.jpeg",
+          img: "/BellaCrosta/home.jpeg",
           path: "bellacrosta",
         },
         {
@@ -206,7 +206,7 @@ export default function SkillsSection() {
             "Développement d'une application web et mobile de gestion scolaire",
           argumentation: `Dans ce projet, j'ai optimisé l'application à travers la réutilisation de composants, notamment grâce à un dossier shared contenant les composants, les types, les API, les hooks, la logique et les assets partagés entre chaque plateforme, pour éviter la duplication de code et faciliter la maintenance de l'application.\n\n
           Cette optimisation a permis de réduire le temps de développement de l'application par 3, permettant d'avoir une application disponible sur web, iOS et Android en même temps.\n\n`,
-          img: "/EiffelTime/Login_screen.png",
+          img: "/EiffelTime/home.png",
           path: "nested/eiffeltime",
         },
       ],
@@ -245,7 +245,7 @@ export default function SkillsSection() {
           des absences, des retards, des moyennes, des salles, des modules, des groupes, des promotions, des enseignants, des élèves, des rôles, \n\n
           des permissions, des notifications, des messages et des fichiers. Dans ce projet, ayant principalement travaillé sur le front-end de l'application,
           j'ai pu réaliser la page d'administration permettant à l'administrateur de gérer les utilisateurs à travers une interface, sans avoir à rentrer dans le code.`,
-          img: "/EiffelTime/Login_screen.png",
+          img: "/EiffelTime/home.png",
           path: "nested/eiffeltime",
         },
         {
@@ -255,7 +255,7 @@ export default function SkillsSection() {
           argumentation: `Dans ce projet, j'ai pu concevoir la BDD à travers un MCD (Modèle Conceptuel de Données) ainsi qu'un SR (Schéma Relationnel).\n\n
           J'ai utilisé JDBC (Java Database Connectivity) pour effectuer des requêtes sur la base de données, pour afficher mais aussi mettre à jour automatiquement les données,
           notamment pour la gestion des commandes, et des ingrédients et des stocks.\n\n`,
-          img: "/BellaCrosta/ConnexionPizzaiolo.jpeg",
+          img: "/BellaCrosta/home.jpeg",
           path: "bellacrosta",
         },
         {
@@ -286,7 +286,7 @@ export default function SkillsSection() {
           de définir les fonctionnalités de l'application à travers un PBS (Product Breakdown Structure).
           J'ai ensuite organisé les étapes du projets en concevant un WBS (Work Breakdown Structure).\n\n
           Ces étapes ont permis de clarifier les tâches à réaliser, donnant ainsi à toute l'équipe une vision claire des objectifs à atteindre.\n\n`,
-          img: "/EiffelTime/Login_screen.png",
+          img: "/EiffelTime/home.png",
           path: "nested/eiffeltime",
         },
         {
@@ -295,7 +295,7 @@ export default function SkillsSection() {
             "Développement d'un jeu vidéo éducatif pour faciliter l'apprentissage des mathématiques",
           argumentation: `Dans ce projet, je me suis chargé de réaliser les spécifications techniques et fonctionnelles, de lister les tâches et
           de planifier et organiser le projet à travers un diagramme de GANTT et un PERT.`,
-          img: "/ArithmeticArena/stock-2.jpg",
+          img: "/ArithmeticArena/home.jpg",
           path: "arithmeticarena",
         },
         {
@@ -303,7 +303,7 @@ export default function SkillsSection() {
           description:
             "Développement d'une application Java de gestion de commandes d'une pizzeria",
           argumentation: `Dans ce projet, j'ai pu concevoir le diagramme PBS, le WBS, le diagramme de GANTT et le PERT.`,
-          img: "/BellaCrosta/ConnexionPizzaiolo.jpeg",
+          img: "/BellaCrosta/home.jpeg",
           path: "bellacrosta",
         },
         {
@@ -332,7 +332,7 @@ export default function SkillsSection() {
           de la BDD, et 1 chef de projet.\n\n
           J'ai pu travailler en étroite collaboration avec le chef de projet qui m'a assisté dans ma tâche de designer UI/UX pour la conception des maquettes et des prototypes.\n\n.
           J'ai également travaillé avec le chargé de BDD pour récupérer réaliser les interactions bdd telles que l'affichage, la mise à jour et la suppression des données, à travers le front-end.\n\n`,
-          img: "/EiffelTime/Login_screen.png",
+          img: "/EiffelTime/home.png",
           path: "nested/eiffeltime",
         },
         {
@@ -341,7 +341,7 @@ export default function SkillsSection() {
             "Développement d'un jeu vidéo éducatif pour faciliter l'apprentissage des mathématiques",
           argumentation:
             "Dans ce projet, j'ai travaillé en collaboration avec 3 autres étudiants.",
-          img: "/ArithmeticArena/stock-2.jpg",
+          img: "/ArithmeticArena/home.jpg",
           path: "arithmeticarena",
         },
         {
@@ -350,7 +350,7 @@ export default function SkillsSection() {
             "Développement d'une application Java de gestion de commandes d'une pizzeria",
           argumentation:
             "Dans ce projet, j'ai pu travailler en collaboration avec 2 autres étudiants.",
-          img: "/BellaCrosta/ConnexionPizzaiolo.jpeg",
+          img: "/BellaCrosta/home.jpeg",
           path: "bellacrosta",
         },
         {
