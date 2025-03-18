@@ -7,8 +7,9 @@ import {
   Brain,
   Briefcase,
   ChevronDown,
-  Clock,
+  ClipboardList,
   Code,
+  Database,
   Globe,
   Layout,
   LucideIcon,
@@ -122,7 +123,7 @@ export default function SkillsSection() {
       description:
         "Concevoir, coder, tester et intégrer des solutions informatiques répondant aux besoins des clients",
       level: 3,
-      icon: Users,
+      icon: Code,
       projects: [
         {
           title: "Eiffel Time",
@@ -217,7 +218,7 @@ export default function SkillsSection() {
       description:
         "Capacité à organiser efficacement les tâches, respecter les délais et maximiser la productivité.",
       level: 2,
-      icon: Clock,
+      icon: Server,
       projects: [
         {
           title: "Apache2",
@@ -235,7 +236,7 @@ export default function SkillsSection() {
       description:
         "Concevoir et administrer des bases de données, gérer les données de l'entreprise",
       level: 2,
-      icon: Briefcase,
+      icon: Database,
       projects: [
         {
           title: "Eiffel Time",
@@ -275,7 +276,7 @@ export default function SkillsSection() {
       description:
         "Gérer un projet informatique en respectanat les besoins clients et les contraintes",
       level: 3,
-      icon: Briefcase,
+      icon: ClipboardList,
       projects: [
         {
           title: "Eiffel Time",
@@ -322,7 +323,7 @@ export default function SkillsSection() {
       description:
         "Collaborer efficacement au sein d'une équipe de développement",
       level: 3,
-      icon: Briefcase,
+      icon: Users,
       projects: [
         {
           title: "Eiffel Time",
