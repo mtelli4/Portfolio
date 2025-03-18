@@ -34,7 +34,15 @@ export default function ProjectsSection() {
       description:
         "Un portfolio moderne avec des effets de parallaxe et une interface utilisateur élégante.",
       image: "/Portfolio2/home.png",
-      tags: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Framer Motion"],
+      tags: [
+        "React",
+        "TypeScript",
+        "Next.js",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Zod",
+        "Nodemailer",
+      ],
       detailsUrl: "/Portfolio2",
       githubUrl: "https://github.com/mtelli4/Portfolio.git",
     },
