@@ -31,9 +31,12 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-medium">Email</h4>
-                    <p className="text-muted-foreground">
+                    <a
+                      href="mailto:tellimohamed91@gmail.com"
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                    >
                       tellimohamed91@gmail.com
-                    </p>
+                    </a>
                   </div>
                 </div>
 
@@ -43,7 +46,12 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-medium">Téléphone</h4>
-                    <p className="text-muted-foreground">+33 7 67 63 63 58</p>
+                    <a
+                      href="tel:+33767636358"
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      +33 7 67 63 63 58
+                    </a>
                   </div>
                 </div>
 
