@@ -60,7 +60,7 @@ export default function ProjectCard({
           )}
 
           {detailsUrl && (
-            <Link href={detailsUrl} target="_blank" rel="noopener noreferrer">
+            <Link href={detailsUrl}>
               <Button variant="outline" size="sm" className="gap-1.5">
                 <Info className="w-4 h-4" />
                 Détails
