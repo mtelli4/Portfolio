@@ -188,36 +188,38 @@ export default function ProjectDetailsPage() {
         </div>
 
         {/* Galerie de captures d'écran */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-center">
-            Captures d&apos;écran
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {project.screenshots.map((screenshot, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="rounded-xl overflow-hidden shadow-md"
-              >
-                <div className="relative w-full h-[250px]">
-                  <Image
-                    src={screenshot.url}
-                    alt={screenshot.caption}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-4 bg-card">
-                  <p className="text-center text-sm text-card-foreground">
-                    {screenshot.caption}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
+        {project.screenshots && project.screenshots.length > 0 && (
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold mb-8 text-center">
+              Captures d&apos;écran
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {project.screenshots.map((screenshot, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="rounded-xl overflow-hidden shadow-md"
+                >
+                  <div className="relative w-full h-[250px]">
+                    <Image
+                      src={screenshot.url}
+                      alt={screenshot.caption}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-4 bg-card">
+                    <p className="text-center text-sm text-card-foreground">
+                      {screenshot.caption}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Section défis et apprentissages */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

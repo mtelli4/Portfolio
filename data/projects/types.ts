@@ -15,7 +15,7 @@ export interface Project {
   task: string;
   action: string[];
   result: string;
-  screenshots: Screenshot[];
+  screenshots?: Screenshot[];
   challenges: string[];
   learnings: string[];
 }

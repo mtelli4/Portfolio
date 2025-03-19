@@ -168,7 +168,7 @@ export default function SkillsSection() {
           path: "nested/eiffeltime",
         },
         {
-          title: "portfolio",
+          title: "Portfolio",
           description: "Développement d'un site web portfolio",
           argumentation: `Ce projet est un projet personnel dans lequel j'ai développé un site web portfolio pour présenter mes projets et mes compétences afin de permettre aux visiteurs de découvrir mon travail.\n\n
                 J'ai développé ce site web principalement en Astro, pour permettre une navigation fluide et une expérience utilisateur optimale, mais aussi en TypeScript et en CSS.\n\n
@@ -662,10 +662,10 @@ export default function SkillsSection() {
                                     className="w-full h-auto object-cover aspect-[3/2]"
                                   />
                                   <div className="py-1.5 text-left">
-                                    <h5 className="font-medium text-sm mb-0.5">
+                                    <h4 className="font-bold text-xl mb-0.5">
                                       {project.title}
-                                    </h5>
-                                    <p className="text-xs text-primary-foreground/80">
+                                    </h4>
+                                    <p className="text-lg text-primary-foreground/80">
                                       {project.description}
                                     </p>
                                   </div>
