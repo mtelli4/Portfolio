@@ -1,4 +1,5 @@
 import { eiffelTimeProject } from "./eiffeltime";
+import { oldportfolioProject } from "./oldportfolio";
 import { portfolioProject } from "./portfolio";
 import { Project } from "./types";
 // Importer d'autres projets au fur et à mesure
@@ -6,6 +7,7 @@ import { Project } from "./types";
 export const projectsData: Record<string, Project> = {
   [eiffelTimeProject.id]: eiffelTimeProject,
   [portfolioProject.id]: portfolioProject,
+  [oldportfolioProject.id]: oldportfolioProject,
   // Ajouter d'autres projets ici
 };
 
