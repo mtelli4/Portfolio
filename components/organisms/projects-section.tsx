@@ -79,7 +79,7 @@ export default function ProjectsSection() {
     {
       title: "CogTel",
       description:
-        "Une application android de stimulation cognitive, pour l'AP-HP.",
+        "Une application android de stimulation cognitive, pour l'AP-HP, dans le cadre de mon stage de 3 mois chez Dynseo, en deuxième année de BUT.",
       image:
         "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2070&auto=format&fit=crop",
       tags: ["Kotlin", "Java", "Jetpack Compose", "Android"],
@@ -89,7 +89,7 @@ export default function ProjectsSection() {
       description:
         "Un jeu vidéo ludique pour faciliter l'apprentissage des mathématiques.",
       image: "/ArithmeticArena/home.jpg",
-      tags: ["Unity", "C#"],
+      tags: ["Unity", "C#", ".NET"],
       detailsUrl: "/ArithmeticArena",
     },
     {

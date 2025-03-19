@@ -1,3 +1,4 @@
+import { arithmeticarenaProject } from "./arithmeticarena";
 import { eiffelTimeProject } from "./eiffeltime";
 import { oldportfolioProject } from "./oldportfolio";
 import { portfolioProject } from "./portfolio";
@@ -8,6 +9,7 @@ export const projectsData: Record<string, Project> = {
   [eiffelTimeProject.id]: eiffelTimeProject,
   [portfolioProject.id]: portfolioProject,
   [oldportfolioProject.id]: oldportfolioProject,
+  [arithmeticarenaProject.id]: arithmeticarenaProject,
   // Ajouter d'autres projets ici
 };
 
