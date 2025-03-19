@@ -4,6 +4,7 @@ import SkillCard from "@/components/molecules/skill-card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion } from "framer-motion";
 import {
+  Atom,
   Braces,
   Brain,
   Cable,
@@ -14,7 +15,6 @@ import {
   Code,
   Coffee,
   Columns,
-  Component,
   Container,
   CornerRightUp,
   Cpu,
@@ -82,9 +82,10 @@ export default function SkillsSection() {
   });
 
   const technologiesSkills: Skill[] = [
-    { name: "HTML/CSS", icon: FileText }, // Au lieu de Layout
+    { name: "HTML", icon: FileText }, // Au lieu de Layout
+    { name: "CSS", icon: Palette }, // Au lieu de Layout
     { name: "JavaScript/TypeScript", icon: FileCode }, // Au lieu de Code
-    { name: "React", icon: Component }, // Au lieu de Globe
+    { name: "React", icon: Atom }, // Au lieu de Globe
     { name: "Next.js", icon: CornerRightUp }, // Au lieu de Globe
     { name: "Java", icon: Coffee }, // Au lieu de Code (coffee = tasse de café, clin d'œil à Java)
     { name: "Python", icon: TerminalSquare }, // Au lieu de Code

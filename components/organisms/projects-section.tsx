@@ -42,6 +42,7 @@ export default function ProjectsSection() {
         "Framer Motion",
         "Zod",
         "Nodemailer",
+        "Vercel",
       ],
       detailsUrl: "/Portfolio2",
       githubUrl: "https://github.com/mtelli4/Portfolio.git",

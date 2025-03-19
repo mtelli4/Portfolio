@@ -76,7 +76,7 @@ export default function ContactSection() {
               <div className="bg-secondary/50 rounded-lg p-4">
                 <p className="text-sm font-medium">Statut actuel:</p>
                 <p className="text-primary font-bold">
-                  Disponible pour de nouveaux projets
+                  Disponible pour une alternance
                 </p>
               </div>
             </div>

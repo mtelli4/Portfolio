@@ -1,37 +1,16 @@
 "use client";
 
+import { Project } from "@/data/projects/types";
 import { motion } from "framer-motion";
 import { ChevronLeft, ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-// Types pour les données du projet
-interface ProjectDetail {
-  title: string;
-  description: string;
-  image: string;
-  tags: string[];
-  githubUrl?: string;
-  demoUrl?: string;
-  situation: string;
-  task: string;
-  action: string[];
-  result: string;
-  screenshots: Screenshot[];
-  challenges: string[];
-  learnings: string[];
-}
-
-interface Screenshot {
-  url: string;
-  caption: string;
-}
-
 export default function ProjectDetailsPage() {
   const router = useRouter();
   const params = useParams();
-  const [project, setProject] = useState<ProjectDetail | null>(null);
+  const [project, setProject] = useState<Project | null>(null);
   const [loading, setLoading] = useState(true);
   // Ajoutez cette fonction dans votre composant ProjectDetailsPage
 
@@ -45,94 +24,35 @@ export default function ProjectDetailsPage() {
     router.push("/");
   };
   useEffect(() => {
-    // Dans une application réelle, vous récupéreriez les données depuis une API
-    // Ici, nous simulons cette récupération pour l'exemple
     const fetchProjectDetails = async () => {
       setLoading(true);
 
-      // Simulation de chargement
-      setTimeout(() => {
-        // Exemple de données pour le projet EiffelTime
-        if (params.projectId === "EiffelTime") {
-          setProject({
-            title: "Eiffel Time (page en cours de développement)",
-            description:
-              "Une application de gestion universitaire multiplateforme, permettant de centraliser et faciliter l'accès à l'emploi du temps, la gestion des notes, les moyennes, la gestion des absences, le suivi des présences et la messagerie pour l'Université Gustave Eiffel.",
-            image: "/EiffelTime/home.png",
-            tags: [
-              "React",
-              "React Native",
-              "TypeScript",
-              "Tailwind CSS",
-              "Vite.js",
-              "Node.js",
-              "Postgresql",
-              "Prisma",
-              "HTML",
-              "CSS",
-            ],
-            githubUrl: "https://github.com/mtelli4/eiffel_time.git",
-            situation:
-              "Les étudiants et le personnel de l'Université Gustave Eiffel utilisaient plusieurs plateformes distinctes pour accéder à leurs emplois du temps, notes, et pour communiquer, ce qui créait de la confusion et une perte de temps.",
-            task: "Développer une solution centralisée permettant aux étudiants et au personnel d'accéder facilement à toutes les fonctionnalités essentielles depuis une seule application, disponible sur mobile et web.",
-            action: [
-              "Conception d'une architecture client-serveur permettant une synchronisation des données en temps réel",
-              "Création d'une interface utilisateur intuitive avec React pour le web et React Native pour mobile",
-              "Développement d'une API RESTful avec Node.js pour gérer les données",
-              "Mise en place d'une base de données PostgreSQL avec Prisma comme ORM",
-              "Implémentation d'un système d'authentification sécurisé",
-              "Configuration d'un système de notifications en temps réel",
-            ],
-            result:
-              "L'application Eiffel Time a été adoptée par plus de 80% des étudiants dès le premier semestre de son lancement. Les retours indiquent une amélioration significative de l'expérience utilisateur et une réduction du temps passé à chercher des informations. Les professeurs rapportent également une meilleure gestion des présences et une communication facilitée avec les étudiants.",
-            screenshots: [
-              {
-                url: "/EiffelTime/home.png",
-                caption: "Page d'accueil montrant le tableau de bord",
-              },
-              {
-                url: "/EiffelTime/calendar.png",
-                caption: "Vue de l'emploi du temps",
-              },
-              {
-                url: "/EiffelTime/grades.png",
-                caption: "Interface de gestion des notes",
-              },
-              {
-                url: "/EiffelTime/messaging.png",
-                caption: "Système de messagerie",
-              },
-            ],
-            challenges: [
-              "Synchronisation des données entre les différentes plateformes existantes",
-              "Conception d'une interface adaptée aux différentes tailles d'écran",
-              "Gestion des droits d'accès selon les différents rôles (étudiants, professeurs, administration)",
-            ],
-            learnings: [
-              "Importance de l'architecture pour les applications multiplateformes",
-              "Techniques de gestion d'état avancées avec React",
-              "Optimisation des requêtes de base de données pour améliorer les performances",
-              "Méthodes de déploiement continu pour les applications web et mobiles",
-            ],
-          });
-        } else {
-          // Pour les autres projets, vous implémenteriez des données similaires
-          // Par défaut, rediriger vers la page projets si l'ID n'est pas valide
-          router.push("/projects");
+      try {
+        if (params.projectId) {
+          const response = await fetch(`/api/projects/${params.projectId}`);
+
+          if (!response.ok) {
+            throw new Error("Project not found");
+          }
+
+          const projectData = await response.json();
+          setProject(projectData);
         }
+      } catch (error) {
+        console.error("Error fetching project details:", error);
+        router.push("/projects");
+      } finally {
         setLoading(false);
-      }, 500);
+      }
     };
 
-    if (params.projectId) {
-      fetchProjectDetails();
-    }
+    fetchProjectDetails();
   }, [params.projectId, router]);
 
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+        <p className="text-xl">Chargement...</p>
       </div>
     );
   }
