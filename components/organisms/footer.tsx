@@ -136,12 +136,6 @@ export default function Footer() {
             </div>
           </div>
         </div>
-
-        <div className="mt-12 pt-6 border-t border-secondary/50 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Portfolio. Tous droits réservés.
-          </p>
-        </div>
       </div>
     </footer>
   );

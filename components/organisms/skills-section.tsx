@@ -22,8 +22,8 @@ import {
   FileCode,
   FileJson,
   FileText,
-  GitBranch,
   GithubIcon,
+  Gitlab,
   Hash,
   Hexagon,
   Layers,
@@ -114,20 +114,9 @@ export default function SkillsSection() {
     { name: "PL/SQL", icon: FileCode }, // Langage de programmation SQL avec du code
     { name: "JDBC", icon: Cable }, // Représente la connectivité/interface
   ];
-  // const backendSkills: Skill[] = [
-  //   { name: "Node.js", icon: Server, level: 80 },
-  //   { name: "Express", icon: Server, level: 78 },
-  //   { name: "Python", icon: Code, level: 75 },
-  //   { name: "Django", icon: Server, level: 70 },
-  //   { name: "MongoDB", icon: Database, level: 75 },
-  //   { name: "PostgreSQL", icon: Database, level: 72 },
-  //   { name: "Firebase", icon: Database, level: 80 },
-  //   { name: "GraphQL", icon: Code, level: 65 },
-  // ];
-
   const devopsSkills: Skill[] = [
     { name: "Github", icon: GithubIcon }, // Au lieu de Code
-    { name: "Gitlab", icon: GitBranch }, // Au lieu de Code
+    { name: "Gitlab", icon: Gitlab }, // Au lieu de Code
     { name: "Docker", icon: Container }, // Au lieu de Settings
     { name: "Jenkins (Pipeline CI/CD)", icon: Workflow }, // Au lieu de Settings
     { name: "Maven", icon: Package }, // Au lieu de Settings
