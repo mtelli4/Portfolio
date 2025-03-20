@@ -141,7 +141,7 @@ export default function ProjectsSection() {
     <section id="projects" ref={sectionRef} className="py-24 bg-background">
       <div className="container px-4 md:px-6">
         <SectionHeading
-          title="Mes projets (section actuellement en cours de développement)"
+          title="Mes projets"
           subtitle="Découvrez une sélection de mes travaux récents"
           align="center"
         />
