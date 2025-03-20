@@ -1,14 +1,16 @@
 import { getProjectById } from "@/data/projects";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(
-  request: NextRequest,
-  { params }: { params: { id: string } }
-) {
+// Type explicite pour le contexte de route
+type Context = {
+  params: Promise<{ id: string }>;
+};
+
+export async function GET(request: NextRequest, context: Context) {
   try {
-    // Attendez params lui-même d'abord
-    const resolvedParams = await params;
-    const id = resolvedParams.id;
+    // Attendre les paramètres complets avant d'accéder à l'ID
+    const params = await context.params;
+    const id = params.id;
 
     const project = getProjectById(id);
 
