@@ -1,14 +1,16 @@
 import { getProjectById } from "@/data/projects";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(
-  request: Request,
+  request: NextRequest,
   { params }: { params: { id: string } }
 ) {
   try {
-    // Attendre explicitement les paramètres comme suggéré par l'erreur
+    // Attendez params lui-même d'abord
     const resolvedParams = await params;
-    const project = getProjectById(resolvedParams.id);
+    const id = resolvedParams.id;
+
+    const project = getProjectById(id);
 
     if (!project) {
       return NextResponse.json({ error: "Project not found" }, { status: 404 });
