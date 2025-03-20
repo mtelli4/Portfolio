@@ -3,11 +3,12 @@ import { NextResponse } from "next/server";
 
 export async function GET(
   request: Request,
-  context: { params: { id: string } }
+  { params }: { params: { id: string } }
 ) {
   try {
-    // Explicitement attendre les paramètres
-    const { id } = await context.params;
+    // Attendre les paramètres avant de les utiliser
+    const resolvedParams = await params;
+    const id = resolvedParams.id;
 
     const project = getProjectById(id);
 
