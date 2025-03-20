@@ -31,34 +31,86 @@ export const eiffelTimeProject: Project = {
     "Configuration d'un système de notifications en temps réel",
   ],
   result:
-    "L'application Eiffel Time a été adoptée par plus de 80% des étudiants dès le premier semestre de son lancement. Les retours indiquent une amélioration significative de l'expérience utilisateur et une réduction du temps passé à chercher des informations. Les professeurs rapportent également une meilleure gestion des présences et une communication facilitée avec les étudiants.",
+    "Le projet a été un tel succès que nous avons pu entamer l'ajoute de fonctionnalités secondaires, notamment un thème sombre. La quasi totalité des fonctionnalités demandées ont été implémenté, à l'exception du QR Code pour le pointage des présences d'un cours, et l'implémentation de la logique pour les notifications.",
   screenshots: [
     {
       url: "/EiffelTime/home.png",
-      caption: "Page d'accueil montrant le tableau de bord",
+      caption: "Page de connexion",
     },
-    // {
-    //   url: "/EiffelTime/calendar.png",
-    //   caption: "Vue de l'emploi du temps",
-    // },
-    // {
-    //   url: "/EiffelTime/grades.png",
-    //   caption: "Interface de gestion des notes",
-    // },
-    // {
-    //   url: "/EiffelTime/messaging.png",
-    //   caption: "Système de messagerie",
-    // },
+    {
+      url: "/EiffelTime/Light/Schedule.png",
+      caption: "Emploi du temps",
+    },
+    {
+      url: "/EiffelTime/Light/Grades.png",
+      caption: "Notes",
+    },
+    {
+      url: "/EiffelTime/Light/Absences.png",
+      caption: "Absences",
+    },
+    {
+      url: "/EiffelTime/Light/Averages.png",
+      caption: "Moyennes",
+    },
+    {
+      url: "/EiffelTime/Light/Messagerieb.png",
+      caption: "Messagerie",
+    },
+    {
+      url: "/EiffelTime/Light/Admin.png",
+      caption: "Administration",
+    },
+    {
+      url: "/EiffelTime/Light/Settingsb.png",
+      caption: "Paramètres",
+    },
+    {
+      url: "/EiffelTime/Light/Notifications.png",
+      caption: "Notifications",
+    },
+    {
+      url: "/EiffelTime/Dark/Schedule.png",
+      caption: "Emploi du temps",
+    },
+    {
+      url: "/EiffelTime/Dark/Scheduledetails.png",
+      caption: "Détails d'un cours",
+    },
+    {
+      url: "/EiffelTime/Dark/Grades.png",
+      caption: "Notes",
+    },
+    {
+      url: "/EiffelTime/Dark/AbsencesManagement.png",
+      caption: "Absences",
+    },
+    {
+      url: "/EiffelTime/Dark/Averages.png",
+      caption: "Moyennes",
+    },
+    {
+      url: "/EiffelTime/Dark/Messagerie.png",
+      caption: "Messagerie",
+    },
+    {
+      url: "/EiffelTime/Dark/Admin.png",
+      caption: "Administration",
+    },
+    {
+      url: "/EiffelTime/Dark/Settings.png",
+      caption: "Paramètres",
+    },
   ],
   challenges: [
-    "Synchronisation des données entre les différentes plateformes existantes",
+    "Configuration du monorepo pour assurer le partage de code entre les applications web et mobile.",
+    "Gestion des dépendances spécifiques à chaque plateforme",
     "Conception d'une interface adaptée aux différentes tailles d'écran",
     "Gestion des droits d'accès selon les différents rôles (étudiants, professeurs, administration)",
   ],
   learnings: [
     "Importance de l'architecture pour les applications multiplateformes",
+    "Découverte de React, React Native, Tailwind CSS, Vite.js, PostgreSQL, Prisma, Babel, Metro",
     "Techniques de gestion d'état avancées avec React",
-    "Optimisation des requêtes de base de données pour améliorer les performances",
-    "Méthodes de déploiement continu pour les applications web et mobiles",
   ],
 };
