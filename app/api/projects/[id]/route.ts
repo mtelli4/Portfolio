@@ -6,11 +6,9 @@ export async function GET(
   { params }: { params: { id: string } }
 ) {
   try {
-    // Attendre les paramètres avant de les utiliser
+    // Attendre explicitement les paramètres comme suggéré par l'erreur
     const resolvedParams = await params;
-    const id = resolvedParams.id;
-
-    const project = getProjectById(id);
+    const project = getProjectById(resolvedParams.id);
 
     if (!project) {
       return NextResponse.json({ error: "Project not found" }, { status: 404 });
