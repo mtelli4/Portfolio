@@ -61,7 +61,7 @@ interface Project {
   description: string;
   argumentation: string;
   img: string;
-  path: string;
+  path?: string;
 }
 
 interface SoftSkill {
@@ -157,6 +157,15 @@ export default function SkillsSection() {
           path: "nested/eiffeltime",
         },
         {
+          title: "CoDec",
+          description:
+            "Développement d'une petite application graphique pour un CoDec (Encodeur/Décodeur) de compression d’image basé sur un codage diﬀérentiel",
+          argumentation: `Dans ce projet, j'ai pu développer un encodeur/décodeur de compression d'image basé sur un codage différentiel, permettant de convertir des
+          images .pgm au format .dif et inversement. Cet encodeur est développé en C++, et utilise la librairie g2x pour la fenêtre graphique.
+          \n\n`,
+          img: "/CoDec/image.png",
+        },
+        {
           title: "Portfolio",
           description: "Développement d'un site web portfolio",
           argumentation: `Ce projet est un projet personnel dans lequel j'ai développé un site web portfolio pour présenter mes projets et mes compétences afin de permettre aux visiteurs de découvrir mon travail.\n\n
@@ -227,6 +236,48 @@ export default function SkillsSection() {
           Cette optimisation a permis de réduire le temps de développement de l'application par 3, permettant d'avoir une application disponible sur web, iOS et Android en même temps.\n\n`,
           img: "/EiffelTime/home.png",
           path: "nested/eiffeltime",
+        },
+        {
+          title: "Genshin circle war",
+          description:
+            "Le but de ce projet est d'optimiser les performances d'un jeu vidéo réalisé en Python avec la bibliothèque Tkinter.",
+          argumentation: `N'ayant pas été présent dans cet IUT en BUT 1, j'ai repris le projet de mon binôme, et j'y ai introduit des optimisations en réduisant le nombre d'appels aux fonctions les plus sollicitées.
+                
+        Pour donner une idée, voici le nombre d'appels des fonctions avant optimisation :
+                
+        <pre>
+        ncalls         tottime   percall   cumtime   percall  filename:lineno(function)
+        829333/829329   0.043     0.000     0.043     0.000  {built-in method builtins.len}
+        826412         35.817     0.000    35.845     0.000  {method 'call' of '_tkinter.tkapp' objects}
+        826146          0.139     0.000    35.787     0.000  /lib/python3.13/tkinter/__init__.py:1465(update)
+        826145          0.137     0.000    35.852     0.000  /Genhsin_circle_war_SAE1/upemtk.py:74(update)
+        826145          0.139     0.000    35.991     0.000  /Genhsin_circle_war_SAE1/upemtk.py:158(mise_a_jour)
+        826096          0.050     0.000     0.050     0.000  /Genhsin_circle_war_SAE1/upemtk.py:570(type_evenement)
+        826096          0.137     0.000     0.180     0.000  /Genhsin_circle_war_SAE1/upemtk.py:556(donne_evenement)
+        587124          0.075     0.000     0.075     0.000  Jeu2.py:420(in_cercle)
+        360060          0.033     0.000     0.033     0.000  {built-in method time.time}
+        101400          0.044     0.000     0.118     0.000  Jeu2.py:413(point_dans_joueur)
+        </pre>
+                
+        Voici le nombre d'appels à ces mêmes fonctions, après optimisations :
+                
+        <pre>
+        ncalls         tottime   percall   cumtime   percall  filename:lineno(function)
+        1705/1701      0.001     0.000     0.001     0.000   {built-in method builtins.len}
+        1003           1.405     0.001     1.467     0.001   {method 'call' of '_tkinter.tkapp' objects}
+        737            0.002     0.000     1.228     0.002   lib/python3.13/tkinter/__init__.py:1465(update)
+        736            0.001     0.000     1.159     0.002   /Genhsin_circle_war_SAE1/upemtk.py:74(update)
+        736            0.001     0.000     1.161     0.002   /Genhsin_circle_war_SAE1/upemtk.py:158(mise_a_jour)
+        687            0.000     0.000     0.000     0.000   /Genhsin_circle_war_SAE1/upemtk.py:575(type_evenement)
+        687            0.001     0.000     0.002     0.000   /Genhsin_circle_war_SAE1/upemtk.py:560(donne_evenement)
+        118565         0.018     0.000     0.018     0.000   Jeu2.py:441(in_cercle)
+        671            0.001     0.000     0.001     0.000   {built-in method time.time}
+        22185          0.005     0.000     0.054     0.000   Jeu2.py:433(point_dans_joueur)
+        </pre>
+        
+        La diminution du nombre d'appels aux fonctions met en évidence l'efficacité des optimisations que j'ai réalisées, permettant ainsi d'améliorer considérablement les performances du jeu.`,
+          img: "/Circlewar/Ingame.png",
+          // path: "nested/eiffeltime",
         },
       ],
     },
@@ -677,16 +728,21 @@ export default function SkillsSection() {
                                     <h6 className="text-primary font-medium mb-2">
                                       Développement de la compétence
                                     </h6>
-                                    <p className="mb-4">
-                                      {project.argumentation}
-                                    </p>
+                                    <p
+                                      className="mb-4"
+                                      dangerouslySetInnerHTML={{
+                                        __html: project.argumentation,
+                                      }}
+                                    />
                                     <div className="flex justify-end">
-                                      <a
-                                        href={`/work/${project.path}`}
-                                        className="py-2 px-4 bg-primary text-primary-foreground rounded-full inline-flex items-center justify-center transition-colors hover:opacity-90"
-                                      >
-                                        Voir le projet
-                                      </a>
+                                      {project.path && (
+                                        <a
+                                          href={`/work/${project.path}`}
+                                          className="py-2 px-4 bg-primary text-primary-foreground rounded-full inline-flex items-center justify-center transition-colors hover:opacity-90"
+                                        >
+                                          Voir le projet
+                                        </a>
+                                      )}
                                     </div>
                                   </div>
                                 )}
