@@ -47,6 +47,7 @@ import {
   Zap,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 
@@ -144,6 +145,18 @@ export default function SkillsSection() {
       icon: Code,
       projects: [
         {
+          title: "Nouveau portfolio",
+          description:
+            "Développement d'un portfolio moderne avec des effets de parallaxe et une interface utilisateur élégante.",
+          argumentation: `J'ai développé ce portfolio principalement en React, TypeScript et Tailwind, sur la base de Next.js.
+          J'y ai intégré des animations Framer Motion pour rendre l'expérience utilisateur plus agréable et dynamique.
+          J'ai mis en place un système de présentation de projets détaillés avec une API REST, pour une maintenance et une évolutivité facilitées.
+          J'ai créé un formulaire de contact avec validation Zod et envoi de mail avec Nodemailer.
+          Enfin, j'ai déployé ce site web sur Vercel.`,
+          img: "/Portfolio2/home.png",
+          path: "/Portfolio2",
+        },
+        {
           title: "Eiffel Time",
           description:
             "Développement d'une application web et mobile de gestion scolaire",
@@ -154,7 +167,7 @@ export default function SkillsSection() {
                 J'ai ensuite développé la majorité de l'UI de cette application, notamment l'emploi du temps, les notes, les moyennes, les absences et retards, la messagerie, le centre de notification, la partie administration et la barre de navigation latérale sur web, mais aussi celle sur mobile`,
 
           img: "/EiffelTime/home.png",
-          path: "nested/eiffeltime",
+          path: "/EiffelTime",
         },
         {
           title: "CoDec",
@@ -166,7 +179,7 @@ export default function SkillsSection() {
           img: "/CoDec/image.png",
         },
         {
-          title: "Portfolio",
+          title: "Ancien portfolio",
           description: "Développement d'un site web portfolio",
           argumentation: `Ce projet est un projet personnel dans lequel j'ai développé un site web portfolio pour présenter mes projets et mes compétences afin de permettre aux visiteurs de découvrir mon travail.\n\n
                 J'ai développé ce site web principalement en Astro, pour permettre une navigation fluide et une expérience utilisateur optimale, mais aussi en TypeScript et en CSS.\n\n
@@ -174,7 +187,7 @@ export default function SkillsSection() {
                 Dans ce projet, j'ai aussi pu utilisé la bibliothèque Astro pour la gestion des routes et des composants, pour faciliter la navigation et la réutilisation des composants.\n\n
                 Enfin, j'assure l'intégration et le déploiement continu de ce site web avec GitHub Actions pour garantir sa disponibilité et sa mise à jour régulière.`,
           img: "/Portfolio1/home.jpg",
-          path: "site-portfolio",
+          path: "/Portfolio1",
         },
         {
           title: "Arithmetic Arena",
@@ -184,7 +197,7 @@ export default function SkillsSection() {
           J'ai conçu les différents niveaux de ce jeu, pour permettre une progression adaptée au niveau de l'utilisateur, mais aussi pour permettre une expérience de jeu variée et intéressante.\n\n
           J'ai également développé les différents mécanismes de jeu, pour permettre une expérience de jeu interactive et stimulante, mais aussi pour permettre une expérience de jeu éducative et pédagogique.\n\n`,
           img: "/ArithmeticArena/home.jpg",
-          path: "arithmeticarena",
+          path: "/ArithmeticArena",
         },
         {
           title: "Bella Crosta",
@@ -196,7 +209,7 @@ export default function SkillsSection() {
           Ce projet a été l'occasion pour moi de mettre en pratique mes compétences en JDBC (Java Database Connectivity) pour la gestion des données, mais aussi pour la gestion des commandes et des clients.\n\n
           J'ai également utilisé JavaFX pour le développement de l'interface graphique de cette application, pour permettre une expérience utilisateur moderne et intuitive.\n\n`,
           img: "/BellaCrosta/home.jpeg",
-          path: "bellacrosta",
+          path: "/BellaCrosta",
         },
         {
           title: "Trellite",
@@ -206,7 +219,7 @@ export default function SkillsSection() {
           Elle permet une gestion efficace des projets, des tâches et des collaborateurs, mais aussi pour permettre une expérience utilisateur optimale.\n\n
           Ce projet a été l'occasion pour moi de mettre en pratique mes compétences en Java Swing pour le développement de l'interface graphique, mais aussi pour la gestion des événements et des interactions utilisateur.\n\n`,
           img: "/Trellite/Tableau_de_bord.png",
-          path: "trellite",
+          path: "/Trellolite",
         },
         {
           title: "CarConnect",
@@ -216,7 +229,7 @@ export default function SkillsSection() {
           J'ai développé ce site web pour une start-up fictive de location de voitures, pour permettre aux visiteurs de découvrir les services proposés et de réserver une voiture en ligne.\n\n
           J'ai également utilisé des animations CSS pour rendre le site web plus dynamique et interactif.\n\n`,
           img: "/CarConnect/Voiture2vidéo.png",
-          path: "trellite",
+          path: "/CarConnect",
         },
       ],
     },
@@ -235,7 +248,7 @@ export default function SkillsSection() {
           argumentation: `Dans ce projet, j'ai optimisé l'application à travers la réutilisation de composants, notamment grâce à un dossier shared contenant les composants, les types, les API, les hooks, la logique et les assets partagés entre chaque plateforme, pour éviter la duplication de code et faciliter la maintenance de l'application.\n\n
           Cette optimisation a permis de réduire le temps de développement de l'application par 3, permettant d'avoir une application disponible sur web, iOS et Android en même temps.\n\n`,
           img: "/EiffelTime/home.png",
-          path: "nested/eiffeltime",
+          path: "/EiffelTime",
         },
         {
           title: "Bankcrous",
@@ -305,7 +318,7 @@ export default function SkillsSection() {
             "Installation et configuration d'un serveur web Apache2 sur un raspberry pi",
           argumentation: `Ce projet m'a permis de mettre en place un serveur web Apache2 sur un raspberry pi, pour héberger plusieurs site web statiques.`,
           img: "/Apache2/raspberrypi-apache-logo.png",
-          path: "apache",
+          path: "/RaspberryPi",
         },
       ],
     },
@@ -326,7 +339,7 @@ export default function SkillsSection() {
           des permissions, des notifications, des messages et des fichiers. Dans ce projet, ayant principalement travaillé sur le front-end de l'application,
           j'ai pu réaliser la page d'administration permettant à l'administrateur de gérer les utilisateurs à travers une interface, sans avoir à rentrer dans le code.`,
           img: "/EiffelTime/home.png",
-          path: "nested/eiffeltime",
+          path: "/EiffelTime",
         },
         {
           title: "Bella Crosta",
@@ -336,7 +349,7 @@ export default function SkillsSection() {
           J'ai utilisé JDBC (Java Database Connectivity) pour effectuer des requêtes sur la base de données, pour afficher mais aussi mettre à jour automatiquement les données,
           notamment pour la gestion des commandes, et des ingrédients et des stocks.\n\n`,
           img: "/BellaCrosta/home.jpeg",
-          path: "bellacrosta",
+          path: "/BellaCrosta",
         },
         {
           title: "Trellite",
@@ -345,7 +358,7 @@ export default function SkillsSection() {
           argumentation:
             "Dans ce projet j'ai pu concevoir la BDD à travers un MCD, un SR et un dictionnaires de données.",
           img: "/Trellite/Tableau_de_bord.png",
-          path: "trellite",
+          path: "/Trellolite",
         },
       ],
     },
@@ -367,7 +380,7 @@ export default function SkillsSection() {
           J'ai ensuite organisé les étapes du projets en concevant un WBS (Work Breakdown Structure).\n\n
           Ces étapes ont permis de clarifier les tâches à réaliser, donnant ainsi à toute l'équipe une vision claire des objectifs à atteindre.\n\n`,
           img: "/EiffelTime/home.png",
-          path: "nested/eiffeltime",
+          path: "/EiffelTime",
         },
         {
           title: "Arithmetic Arena",
@@ -376,7 +389,7 @@ export default function SkillsSection() {
           argumentation: `Dans ce projet, je me suis chargé de réaliser les spécifications techniques et fonctionnelles, de lister les tâches et
           de planifier et organiser le projet à travers un diagramme de GANTT et un PERT.`,
           img: "/ArithmeticArena/home.jpg",
-          path: "arithmeticarena",
+          path: "/ArithmeticArena",
         },
         {
           title: "Bella Crosta",
@@ -384,7 +397,7 @@ export default function SkillsSection() {
             "Développement d'une application Java de gestion de commandes d'une pizzeria",
           argumentation: `Dans ce projet, j'ai pu concevoir le diagramme PBS, le WBS, le diagramme de GANTT et le PERT.`,
           img: "/BellaCrosta/home.jpeg",
-          path: "bellacrosta",
+          path: "/BellaCrosta",
         },
         {
           title: "Trellite",
@@ -392,7 +405,7 @@ export default function SkillsSection() {
             "Développement d'une application Java de gestion de projet",
           argumentation: "Dans ce projet, je me suis chargé du PERT.",
           img: "/Trellite/Tableau_de_bord.png",
-          path: "trellite",
+          path: "/Trellolite",
         },
       ],
     },
@@ -413,7 +426,7 @@ export default function SkillsSection() {
           J'ai pu travailler en étroite collaboration avec le chef de projet qui m'a assisté dans ma tâche de designer UI/UX pour la conception des maquettes et des prototypes.\n\n.
           J'ai également travaillé avec le chargé de BDD pour récupérer réaliser les interactions bdd telles que l'affichage, la mise à jour et la suppression des données, à travers le front-end.\n\n`,
           img: "/EiffelTime/home.png",
-          path: "nested/eiffeltime",
+          path: "/EiffelTime",
         },
         {
           title: "Arithmetic Arena",
@@ -422,7 +435,7 @@ export default function SkillsSection() {
           argumentation:
             "Dans ce projet, j'ai travaillé en collaboration avec 3 autres étudiants.",
           img: "/ArithmeticArena/home.jpg",
-          path: "arithmeticarena",
+          path: "/ArithmeticArena",
         },
         {
           title: "Bella Crosta",
@@ -431,7 +444,7 @@ export default function SkillsSection() {
           argumentation:
             "Dans ce projet, j'ai pu travailler en collaboration avec 2 autres étudiants.",
           img: "/BellaCrosta/home.jpeg",
-          path: "bellacrosta",
+          path: "/BellaCrosta",
         },
         {
           title: "Trellite",
@@ -440,7 +453,7 @@ export default function SkillsSection() {
           argumentation:
             "Dans ce projet, j'ai travaillé en collaboration avec 3 autres étudiants.",
           img: "/Trellite/Tableau_de_bord.png",
-          path: "trellite",
+          path: "/Trellolite",
         },
       ],
     },
@@ -746,12 +759,12 @@ export default function SkillsSection() {
                                     />
                                     <div className="flex justify-end">
                                       {project.path && (
-                                        <a
-                                          href={`/work/${project.path}`}
+                                        <Link
+                                          href={project.path}
                                           className="py-2 px-4 bg-primary text-primary-foreground rounded-full inline-flex items-center justify-center transition-colors hover:opacity-90"
                                         >
                                           Voir le projet
-                                        </a>
+                                        </Link>
                                       )}
                                     </div>
                                   </div>
