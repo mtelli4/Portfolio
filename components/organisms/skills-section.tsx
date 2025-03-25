@@ -238,6 +238,16 @@ export default function SkillsSection() {
           path: "nested/eiffeltime",
         },
         {
+          title: "Bankcrous",
+          description: `Tierce maintenance applicative d'une application de gestion bancaire`,
+          argumentation: `Dans ce projet, nous devions travailler sur la maintenance applicative d'une application de gestion bancaire, pour corriger les anomalies.\n\n
+          Le groupe ayant réalisé ce projet y a introrduit 10 anomalies dont 5 bloquantes et 5 majeures.\n\n
+          Nous devions donc nous répartir ces anomalies à 4 et les corriger en respectant les délais et les contraintes.\n\n
+          J'ai personnellement corrigé 2 anomalies bloquantes.
+          La première était une anomalie empêchant la connexion de l'utilisateur à son compte, et la seconde était une anomalie empêchant l'utilisateur de sélectionner une entreprise dans la page des remises.`,
+          img: "/Bankcrous/TMA.webp",
+        },
+        {
           title: "Genshin circle war",
           description:
             "Le but de ce projet est d'optimiser les performances d'un jeu vidéo réalisé en Python avec la bibliothèque Tkinter.",
