@@ -1,7 +1,10 @@
 "use client";
 
 import Button from "@/components/atoms/button";
+import LanguageSwitcher from "@/components/molecules/language-switcher";
 import NavLink from "@/components/molecules/nav-link";
+import { useLanguage } from "@/context/language-context";
+import { translations } from "@/translations";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -9,6 +12,8 @@ import { useEffect, useState } from "react";
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { language } = useLanguage();
+  const t = translations[language].navbar;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,11 +51,11 @@ export default function Navbar() {
 
           {/* Desktop navigation */}
           <nav className="hidden md:flex items-center space-x-1">
-            <NavLink href="#home" label="Accueil" />
-            <NavLink href="#about" label="À propos" />
-            <NavLink href="#skills" label="Compétences" />
-            <NavLink href="#projects" label="Projets" />
-            <NavLink href="#contact" label="Contact" />
+            <NavLink href="#home" label={t.home} />
+            <NavLink href="#about" label={t.about} />
+            <NavLink href="#skills" label={t.skills} />
+            <NavLink href="#projects" label={t.projects} />
+            <NavLink href="#contact" label={t.contact} />
 
             <Button
               variant="default"
@@ -58,9 +63,13 @@ export default function Navbar() {
               className="ml-4"
               onClick={() => window.open("/cv.pdf", "_blank")}
             >
-              Mon CV
+              {t.resume}
             </Button>
           </nav>
+
+          <div className="flex items-center gap-4">
+            <LanguageSwitcher />
+          </div>
         </div>
       </div>
 
@@ -70,31 +79,31 @@ export default function Navbar() {
           <nav className="flex flex-col items-center space-y-6">
             <NavLink
               href="#home"
-              label="Accueil"
+              label={t.home}
               className="text-xl"
               onClick={() => setIsMenuOpen(false)}
             />
             <NavLink
               href="#about"
-              label="À propos"
+              label={t.about}
               className="text-xl"
               onClick={() => setIsMenuOpen(false)}
             />
             <NavLink
               href="#skills"
-              label="Compétences"
+              label={t.skills}
               className="text-xl"
               onClick={() => setIsMenuOpen(false)}
             />
             <NavLink
               href="#projects"
-              label="Projets"
+              label={t.projects}
               className="text-xl"
               onClick={() => setIsMenuOpen(false)}
             />
             <NavLink
               href="#contact"
-              label="Contact"
+              label={t.contact}
               className="text-xl"
               onClick={() => setIsMenuOpen(false)}
             />
@@ -105,7 +114,7 @@ export default function Navbar() {
               className="mt-4"
               onClick={() => window.open("/cv.pdf", "_blank")}
             >
-              Mon CV
+              {t.resume}
             </Button>
           </nav>
         </div>

@@ -1,6 +1,8 @@
 "use client";
 
 import Button from "@/components/atoms/button";
+import { useLanguage } from "@/context/language-context";
+import { translations } from "@/translations";
 import { Loader2 } from "lucide-react";
 import { useState } from "react";
 import { z } from "zod";
@@ -20,6 +22,29 @@ const contactFormSchema = z.object({
 });
 
 export default function ContactForm() {
+  const { language } = useLanguage();
+
+  // Fonction utilitaire pour accéder aux traductions
+  const t = (key: string): string => {
+    // Gestion des clés imbriquées (comme 'hero.title')
+    const keys = key.split(".");
+    // Utilisation d'une approche sans typage spécifique pour naviguer dans l'objet de traductions
+    let value: unknown = translations[language as keyof typeof translations];
+
+    for (const k of keys) {
+      if (
+        value &&
+        typeof value === "object" &&
+        k in (value as Record<string, unknown>)
+      ) {
+        value = (value as Record<string, unknown>)[k];
+      } else {
+        return key; // Retourne la clé si la traduction n'est pas trouvée
+      }
+    }
+
+    return typeof value === "string" ? value : key;
+  };
   // États du formulaire
   const [formData, setFormData] = useState({
     name: "",
@@ -71,9 +96,7 @@ export default function ContactForm() {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(
-          data.error || "Une erreur est survenue lors de l'envoi du message"
-        );
+        throw new Error(data.error || t("contact.error"));
       }
 
       // Réinitialiser le formulaire en cas de succès
@@ -85,7 +108,7 @@ export default function ContactForm() {
       });
       setSubmitStatus({
         type: "success",
-        message: "Votre message a été envoyé avec succès !",
+        message: t("contact.success"),
       });
     } catch (error) {
       // Gérer les erreurs de validation
@@ -116,7 +139,7 @@ export default function ContactForm() {
         <input
           type="text"
           name="name"
-          placeholder="Votre nom"
+          placeholder={t("contact.name")}
           value={formData.name}
           onChange={handleChange}
           className={`w-full p-3 rounded-lg border ${
@@ -133,7 +156,7 @@ export default function ContactForm() {
         <input
           type="email"
           name="email"
-          placeholder="Votre email"
+          placeholder={t("contact.email")}
           value={formData.email}
           onChange={handleChange}
           className={`w-full p-3 rounded-lg border ${
@@ -150,7 +173,7 @@ export default function ContactForm() {
         <input
           type="text"
           name="subject"
-          placeholder="Sujet"
+          placeholder={t("contact.subject")}
           value={formData.subject}
           onChange={handleChange}
           className={`w-full p-3 rounded-lg border ${
@@ -166,7 +189,7 @@ export default function ContactForm() {
       <div>
         <textarea
           name="message"
-          placeholder="Votre message"
+          placeholder={t("contact.message")}
           value={formData.message}
           onChange={handleChange}
           rows={5}
@@ -198,10 +221,11 @@ export default function ContactForm() {
       >
         {isSubmitting ? (
           <>
-            <Loader2 className="h-4 w-4 mr-2 animate-spin" /> Envoi en cours...
+            <Loader2 className="h-4 w-4 mr-2 animate-spin" />{" "}
+            {t("contact.sending")}
           </>
         ) : (
-          "Envoyer le message"
+          t("contact.sendButton")
         )}
       </Button>
     </form>

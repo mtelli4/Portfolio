@@ -2,12 +2,37 @@
 
 import Button from "@/components/atoms/button";
 import SocialIcon from "@/components/atoms/social-icon";
+import { useLanguage } from "@/context/language-context";
+import { translations } from "@/translations";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 
 export default function HeroSection() {
   const heroRef = useRef<HTMLDivElement>(null);
+  const { language } = useLanguage();
+
+  // Fonction utilitaire pour accéder aux traductions
+  const t = (key: string): string => {
+    // Gestion des clés imbriquées (comme 'hero.title')
+    const keys = key.split(".");
+    // Utilisation d'une approche sans typage spécifique pour naviguer dans l'objet de traductions
+    let value: unknown = translations[language as keyof typeof translations];
+
+    for (const k of keys) {
+      if (
+        value &&
+        typeof value === "object" &&
+        k in (value as Record<string, unknown>)
+      ) {
+        value = (value as Record<string, unknown>)[k];
+      } else {
+        return key; // Retourne la clé si la traduction n'est pas trouvée
+      }
+    }
+
+    return typeof value === "string" ? value : key;
+  };
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -69,15 +94,14 @@ export default function HeroSection() {
       <div className="hero-content relative z-10 container mx-auto px-4 transition-transform duration-[0.5s] ease-out">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in">
-            <span className="text-gradient">Mohamed Telli</span>
+            <span className="text-gradient">{t("hero.title")}</span>
           </h1>
 
           <p
             className="text-xl md:text-2xl text-foreground/80 mb-8 animate-fade-in"
             style={{ animationDelay: "0.2s" }}
           >
-            Étudiant en cycle ingénieur à l&apos;EPITA, spécialisé en
-            développement d&apos;applications
+            {t("hero.subtitle")}
           </p>
 
           <div
@@ -85,12 +109,12 @@ export default function HeroSection() {
             style={{ animationDelay: "0.4s" }}
           >
             <Link href="#projects">
-              <Button size="lg">Voir mes projets</Button>
+              <Button size="lg">{t("hero.viewProjects")}</Button>
             </Link>
 
             <Link href="#contact">
               <Button variant="outline" size="lg">
-                Me contacter
+                {t("hero.contactMe")}
               </Button>
             </Link>
           </div>

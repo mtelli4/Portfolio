@@ -1,20 +1,45 @@
 import SectionHeading from "@/components/atoms/section-heading";
 import ContactForm from "@/components/molecules/contact-form";
+import { useLanguage } from "@/context/language-context";
+import { translations } from "@/translations";
 import { Mail, MapPin, Phone } from "lucide-react";
 
 export default function ContactSection() {
+  const { language } = useLanguage();
+
+  // Fonction utilitaire pour accéder aux traductions
+  const t = (key: string): string => {
+    // Gestion des clés imbriquées (comme 'hero.title')
+    const keys = key.split(".");
+    // Utilisation d'une approche sans typage spécifique pour naviguer dans l'objet de traductions
+    let value: unknown = translations[language as keyof typeof translations];
+
+    for (const k of keys) {
+      if (
+        value &&
+        typeof value === "object" &&
+        k in (value as Record<string, unknown>)
+      ) {
+        value = (value as Record<string, unknown>)[k];
+      } else {
+        return key; // Retourne la clé si la traduction n'est pas trouvée
+      }
+    }
+
+    return typeof value === "string" ? value : key;
+  };
   return (
     <section id="contact" className="py-24 bg-muted/30">
       <div className="container px-4 md:px-6">
         <SectionHeading
-          title="Me contacter"
-          subtitle="Vous avez un projet en tête ou des besoins au sein de votre entreprrise ? N'hésitez pas à me contacter"
+          title={t("contact.title")}
+          subtitle={t("contact.subtitle")}
           align="center"
         />
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           <div className="glass rounded-2xl p-8">
-            <h3 className="text-xl font-bold mb-6">Envoyez-moi un message</h3>
+            <h3 className="text-xl font-bold mb-6">{t("contact.formTitle")}</h3>
             <ContactForm />
           </div>
 

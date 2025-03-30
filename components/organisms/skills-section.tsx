@@ -2,6 +2,8 @@
 import SectionHeading from "@/components/atoms/section-heading";
 import SkillCard from "@/components/molecules/skill-card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useLanguage } from "@/context/language-context";
+import { translations } from "@/translations";
 import { motion } from "framer-motion";
 import {
   Atom,
@@ -81,6 +83,9 @@ export default function SkillsSection() {
     triggerOnce: true,
     threshold: 0.1,
   });
+
+  const { language } = useLanguage();
+  const t = translations[language].skills;
 
   const technologiesSkills: Skill[] = [
     { name: "HTML", icon: FileText }, // Au lieu de Layout
@@ -493,8 +498,8 @@ export default function SkillsSection() {
           transition={{ duration: 0.5 }}
         >
           <SectionHeading
-            title="Mes compétences"
-            subtitle="Les technologies et outils que j'utilise au quotidien"
+            title={t.title}
+            subtitle={t.subtitle}
             align="center"
           />
         </motion.div>
@@ -508,37 +513,31 @@ export default function SkillsSection() {
               value="frontend"
               className="data-[state=active]:bg-primary truncate data-[state=active]:text-primary-foreground"
             >
-              Technologies
+              {t.tabs.technologies}
             </TabsTrigger>
-            {/* <TabsTrigger
-              value="backend"
-              className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
-            >
-              Backend
-            </TabsTrigger> */}
             <TabsTrigger
               value="db"
               className="data-[state=active]:bg-primary truncate data-[state=active]:text-primary-foreground"
             >
-              Bases de données
+              {t.tabs.databases}
             </TabsTrigger>
             <TabsTrigger
               value="devops"
               className="data-[state=active]:bg-primary truncate data-[state=active]:text-primary-foreground"
             >
-              DevOps
+              {t.tabs.devops}
             </TabsTrigger>
             <TabsTrigger
               value="tools"
               className="data-[state=active]:bg-primary truncate data-[state=active]:text-primary-foreground"
             >
-              Outils et gestion de projet
+              {t.tabs.tools}
             </TabsTrigger>
             <TabsTrigger
               value="soft-skills"
               className="data-[state=active]:bg-primary truncate data-[state=active]:text-primary-foreground"
             >
-              Transverse
+              {t.tabs.transverse}
             </TabsTrigger>
           </TabsList>
 
@@ -600,29 +599,6 @@ export default function SkillsSection() {
               ))}
             </motion.div>
           </TabsContent>
-          {/* <TabsContent value="backend" className="mt-0">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
-            >
-              {backendSkills.map((skill, index) => (
-                <motion.div
-                  key={skill.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
-                >
-                  <SkillCard
-                    icon={skill.icon}
-                    name={skill.name}
-                    level={skill.level}
-                  />
-                </motion.div>
-              ))}
-            </motion.div>
-          </TabsContent> */}
 
           <TabsContent value="tools" className="mt-0">
             <motion.div
@@ -651,12 +627,12 @@ export default function SkillsSection() {
               transition={{ duration: 0.5 }}
               className="space-y-4"
             >
-              {softSkills.map((skill) => (
+              {softSkills.map((skill, index) => (
                 <motion.div
                   key={skill.id}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
                   className="border border-border rounded-lg overflow-hidden bg-background/50"
                 >
                   {/* En-tête de l'accordéon */}
