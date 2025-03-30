@@ -1,20 +1,37 @@
 import SocialIcon from "@/components/atoms/social-icon";
+import { useLanguage } from "@/context/language-context";
+import { translations } from "@/translations";
 import { Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 
 export default function Footer() {
+  const { language } = useLanguage();
+
+  // Fonction utilitaire pour accéder aux traductions
+  const t = (key: string): string => {
+    // Gestion des clés imbriquées (comme 'hero.title')
+    const keys = key.split(".");
+    // Utilisation d'une approche sans typage spécifique pour naviguer dans l'objet de traductions
+    let value: unknown = translations[language as keyof typeof translations];
+
+    for (const k of keys) {
+      if (
+        value &&
+        typeof value === "object" &&
+        k in (value as Record<string, unknown>)
+      ) {
+        value = (value as Record<string, unknown>)[k];
+      } else {
+        return key; // Retourne la clé si la traduction n'est pas trouvée
+      }
+    }
+
+    return typeof value === "string" ? value : key;
+  };
   return (
     <footer className="py-12 bg-background border-t border-secondary/50">
       <div className="container px-4 md:px-6">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          <div>
-            <h3 className="text-xl font-bold mb-4 text-gradient">Portfolio</h3>
-            <p className="text-muted-foreground text-sm">
-              Un développeur passionné par le développement d&apos;applications
-              modernes.
-            </p>
-          </div>
-
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           <div>
             <h3 className="font-bold mb-4">Navigation</h3>
             <ul className="space-y-2">
@@ -23,7 +40,7 @@ export default function Footer() {
                   href="#home"
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Accueil
+                  {t("footer.home")}
                 </Link>
               </li>
               <li>
@@ -31,7 +48,7 @@ export default function Footer() {
                   href="#about"
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  À propos
+                  {t("footer.about")}
                 </Link>
               </li>
               <li>
@@ -39,7 +56,7 @@ export default function Footer() {
                   href="#skills"
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Compétences
+                  {t("footer.skills")}
                 </Link>
               </li>
               <li>
@@ -47,7 +64,7 @@ export default function Footer() {
                   href="#projects"
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Projets
+                  {t("footer.projects")}
                 </Link>
               </li>
               <li>
@@ -69,7 +86,7 @@ export default function Footer() {
                   href="#"
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Développement Web
+                  {t("footer.webdev")}
                 </Link>
               </li>
               <li>
@@ -85,7 +102,7 @@ export default function Footer() {
                   href="#"
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Applications Mobiles
+                  {t("footer.mobile")}
                 </Link>
               </li>
               <li>
@@ -93,7 +110,7 @@ export default function Footer() {
                   href="#"
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Consulting
+                  {t("footer.management")}
                 </Link>
               </li>
               <li>
@@ -101,22 +118,14 @@ export default function Footer() {
                   href="#"
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Développement logiciel
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Développement d&apos;applications
+                  {t("footer.software")}
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-bold mb-4">Réseaux sociaux</h3>
+            <h3 className="font-bold mb-4">{t("footer.socialmedia")}</h3>
             <div className="flex gap-3">
               <SocialIcon
                 href="https://github.com/mtelli4"
