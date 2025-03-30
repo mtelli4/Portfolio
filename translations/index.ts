@@ -104,6 +104,17 @@ export const translations = {
       success: "Message envoyé avec succès !",
       error: "Une erreur est survenue. Veuillez réessayer.",
     },
+    contactSection: {
+      title: "Informations de contact",
+      email: "Email",
+      phone: "Téléphone",
+      location: "Localisation",
+      availability: "Disponibilité",
+      availabilitySubtitle:
+        "Je suis actuellement disponible pour une alternance, dans le cadre de mes études en cycle ingénieur au sein de l'EPITA.",
+      status: "Statut actuel:",
+      statusSubtitle: "Disponible pour une alternance",
+    },
     footer: {
       rights: "Tous droits réservés",
       madeWith: "Réalisé avec",
@@ -211,6 +222,17 @@ export const translations = {
       sending: "Sending...",
       success: "Message sent successfully!",
       error: "An error occurred. Please try again.",
+    },
+    contactSection: {
+      title: "Contact Information",
+      email: "Email",
+      phone: "Phone",
+      location: "Location",
+      availability: "Availability",
+      availabilitySubtitle:
+        "I am currently available for a three-year apprenticeship as part of my engineering studies at EPITA.",
+      status: "Current status:",
+      statusSubtitle: "Available for a three-year apprenticeship",
     },
     footer: {
       rights: "All rights reserved",

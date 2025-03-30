@@ -46,7 +46,7 @@ export default function ContactSection() {
           <div className="space-y-8">
             <div className="glass rounded-2xl p-8">
               <h3 className="text-xl font-bold mb-6">
-                Informations de contact
+                {t("contactSection.title")}
               </h3>
 
               <div className="space-y-4">
@@ -70,7 +70,7 @@ export default function ContactSection() {
                     <Phone className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-medium">Téléphone</h4>
+                    <h4 className="font-medium">{t("contactSection.phone")}</h4>
                     <a
                       href="tel:+33767636358"
                       className="text-muted-foreground hover:text-primary transition-colors"
@@ -85,7 +85,9 @@ export default function ContactSection() {
                     <MapPin className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-medium">Localisation</h4>
+                    <h4 className="font-medium">
+                      {t("contactSection.location")}
+                    </h4>
                     <p className="text-muted-foreground">Paris, France</p>
                   </div>
                 </div>
@@ -93,15 +95,18 @@ export default function ContactSection() {
             </div>
 
             <div className="glass rounded-2xl p-8">
-              <h3 className="text-xl font-bold mb-6">Disponibilité</h3>
+              <h3 className="text-xl font-bold mb-6">
+                {t("contactSection.availability")}
+              </h3>
               <p className="text-muted-foreground mb-4">
-                Je suis actuellement disponible pour une alternance, dans le
-                cadre de mes études en cycle ingénieur au sein de l&apos;EPITA.
+                {t("contactSection.availabilitySubtitle")}
               </p>
               <div className="bg-secondary/50 rounded-lg p-4">
-                <p className="text-sm font-medium">Statut actuel:</p>
+                <p className="text-sm font-medium">
+                  {t("contactSection.status")}
+                </p>
                 <p className="text-primary font-bold">
-                  Disponible pour une alternance
+                  {t("contactSection.statusSubtitle")}
                 </p>
               </div>
             </div>
