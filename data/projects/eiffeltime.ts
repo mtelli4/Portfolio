@@ -18,7 +18,6 @@ export const eiffelTimeProject: Project = {
     "HTML",
     "CSS",
   ],
-  githubUrl: "https://github.com/mtelli4/eiffel_time.git",
   situation:
     "Les étudiants et le personnel de l'Université Gustave Eiffel utilisaient plusieurs plateformes distinctes pour accéder à leurs emplois du temps, notes, et pour communiquer, ce qui créait de la confusion et une perte de temps.",
   task: "Développer une solution centralisée permettant aux étudiants et au personnel d'accéder facilement à toutes les fonctionnalités essentielles depuis une seule application, disponible sur mobile et web.",

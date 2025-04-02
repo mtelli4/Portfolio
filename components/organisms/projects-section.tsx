@@ -65,7 +65,6 @@ export default function ProjectsSection() {
         "CSS",
       ],
       detailsUrl: "/EiffelTime",
-      githubUrl: "https://github.com/mtelli4/eiffel_time.git",
     },
     {
       title: "Ancien Portfolio",
