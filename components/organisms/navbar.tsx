@@ -52,10 +52,10 @@ export default function Navbar() {
           {/* Desktop navigation */}
           <nav className="hidden md:flex items-center space-x-1">
             <NavLink href="#home" label={t.home} />
-            <NavLink href="#about" label={t.about} />
-            <NavLink href="#skills" label={t.skills} />
             <NavLink href="#projects" label={t.projects} />
+            <NavLink href="#skills" label={t.skills} />
             <NavLink href="#contact" label={t.contact} />
+            <NavLink href="#about" label={t.about} />
 
             <Button
               variant="default"
