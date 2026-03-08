@@ -19,32 +19,11 @@ export const translations = {
       title: "À propos de moi",
       subtitle: "Découvrez mon parcours et mes passions",
       description:
-        "Développeur passionné par la conception, le développement d&apos;applications et les technologies modernes, j'aime relever de nouveaux défis techniques.",
-      p: [
-        `Bonjour ! Étudiant en dernière année de BUT Informatique à
-            l'IUT de Marne-la-Vallée, j'ai été admis en cycle
-            ingénieur à l'EPITA pour la rentrée de septembre 2025.
-            J'ai commencé le développement d'application il y a
-            maintenant 5 ans, au lycée. Le BUT Informatique000 m'a permis de
-            développer des compétences solides en programmation, et en gestion
-            de projets, à travers plusieurs projets et deux stages, un de 3 mois
-            en BUT 2, et un de 5 mois en BUT 3.`,
-        `Ma passion pour les technologies modernes m'amène à effectuer
-            une veille technologique assez souvent, ce qui me permet d'être
-            à jour et force de proposition. J'aime particulièrement créer
-            des interfaces utilisateur intuitives, et je cherche à me renseigner
-            sur les meilleures pratiques en terme d'UI/UX, afin de proposer
-            des expériences interactives qui captivent les utilisateurs.`,
-        `Je ne me lasse pas du développement d'application, et je
-            cherche perpétuellement à apprendre et à m'améliorer.
-            C'est pourquoi j'aime me lancer dans de nouveaux projets,
-            en explorant de nouvelles technologies, et en cherchant à me
-            perfectionner.`,
-      ],
+        "Développeur passionné par la conception, le développement d'applications et les technologies modernes, j'aime relever de nouveaux défis techniques.",
       education: "Formation",
       educationItems: [
-        "Diplôme d'ingénieur en informatique (prochainement)",
-        "Bachelor Universitaire de Technologie en Informatique - Réalisation d'applications : conception, développement et validation (en cours)",
+        "Diplôme d'ingénieur en informatique (en cours)",
+        "Bachelor Universitaire de Technologie en Informatique - Réalisation d'applications : conception, développement et validation",
         "Baccaulauréat général mention assez bien - NSI, SI, LLCE (anglais)",
       ],
       interests: "Centres d'intérêt",
@@ -140,7 +119,7 @@ export const translations = {
     hero: {
       title: "Mohamed Telli",
       subtitle:
-        "Software engineering student at EPITA, looking for a three-year apprenticeship",
+        "Software engineering student at EPITA, available for an apprenticeship",
       contactMe: "Contact me",
       viewProjects: "View my projects",
     },
@@ -170,8 +149,8 @@ export const translations = {
       ],
       education: "Education",
       educationItems: [
-        "Master's degree in software engineering (upcoming)",
-        "University Bachelor of Technology in Computer Science - Application Development: design, development and validation (in progress)",
+        "Master's degree in software engineering (in progress)",
+        "University Bachelor of Technology in Computer Science - Application Development: design, development and validation",
         "General Baccalaureate with honors - Computer Science, Engineering Sciences, LLCE (English)",
       ],
       interests: "Interests",
@@ -238,9 +217,9 @@ export const translations = {
       location: "Location",
       availability: "Availability",
       availabilitySubtitle:
-        "I am currently available for a three-year apprenticeship as part of my engineering studies at EPITA.",
+        "I am currently available for an apprenticeship as part of my engineering studies at EPITA.",
       status: "Current status:",
-      statusSubtitle: "Available for a three-year apprenticeship",
+      statusSubtitle: "Available for an apprenticeship",
     },
     footer: {
       home: "Home",

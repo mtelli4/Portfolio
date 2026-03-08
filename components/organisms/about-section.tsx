@@ -41,12 +41,6 @@ export default function AboutSection() {
         <div className="space-y-6">
           <h3 className="text-2xl font-bold">{t("about.description")}</h3>
 
-          <p className="text-muted-foreground">{t("about.p.0")}</p>
-
-          <p className="text-muted-foreground">{t("about.p.1")}</p>
-
-          <p className="text-muted-foreground">{t("about.p.2")}</p>
-
           <div className="grid grid-cols-2 gap-4 pt-4">
             <div>
               <h4 className="font-medium mb-2">{t("about.education")}</h4>
