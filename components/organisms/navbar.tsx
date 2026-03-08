@@ -61,7 +61,9 @@ export default function Navbar() {
               variant="default"
               size="sm"
               className="ml-4"
-              onClick={() => window.open("/cv.pdf", "_blank")}
+              onClick={() =>
+                window.open(translations[language].about.resumeLink, "_blank")
+              }
             >
               {t.resume}
             </Button>
@@ -112,7 +114,9 @@ export default function Navbar() {
               variant="default"
               size="lg"
               className="mt-4"
-              onClick={() => window.open("/cv.pdf", "_blank")}
+              onClick={() =>
+                window.open(translations[language].about.resumeLink, "_blank")
+              }
             >
               {t.resume}
             </Button>
